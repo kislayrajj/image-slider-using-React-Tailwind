@@ -1,38 +1,5 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body{
+  height: 100vh;
+  background-image: linear-gradient(157.5deg, rgb(148, 31, 115) 0%, rgb(148, 31, 115) 42%,rgb(129, 38, 114) 42%, rgb(129, 38, 114) 53%,rgb(110, 44, 113) 53%, rgb(110, 44, 113) 68%,rgb(91, 51, 113) 68%, rgb(91, 51, 113) 70%,rgb(72, 58, 112) 70%, rgb(72, 58, 112) 83%,rgb(53, 64, 111) 83%, rgb(53, 64, 111) 97%,rgb(34, 71, 110) 97%, rgb(34, 71, 110) 100%),linear-gradient(90deg, rgb(148, 31, 115) 0%, rgb(148, 31, 115) 42%,rgb(129, 38, 114) 42%, rgb(129, 38, 114) 53%,rgb(110, 44, 113) 53%, rgb(110, 44, 113) 68%,rgb(91, 51, 113) 68%, rgb(91, 51, 113) 70%,rgb(72, 58, 112) 70%, rgb(72, 58, 112) 83%,rgb(53, 64, 111) 83%, rgb(53, 64, 111) 97%,rgb(34, 71, 110) 97%, rgb(34, 71, 110) 100%),linear-gradient(0deg, rgb(148, 31, 115) 0%, rgb(148, 31, 115) 42%,rgb(129, 38, 114) 42%, rgb(129, 38, 114) 53%,rgb(110, 44, 113) 53%, rgb(110, 44, 113) 68%,rgb(91, 51, 113) 68%, rgb(91, 51, 113) 70%,rgb(72, 58, 112) 70%, rgb(72, 58, 112) 83%,rgb(53, 64, 111) 83%, rgb(53, 64, 111) 97%,rgb(34, 71, 110) 97%, rgb(34, 71, 110) 100%),linear-gradient(90deg, rgb(43, 115, 147),rgb(213, 181, 127)); background-blend-mode:overlay,overlay,overlay,normal;
+  
 }

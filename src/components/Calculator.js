@@ -64,10 +64,10 @@ const handleKeyDown=(e)=>{
   return (
     <div className='h-full flex flex-row-reverse gap-10  justify-center p-5'>
         <div><button onClick={handleDark} className=" bg-red-500 px-2 py-3 text-center rounded-lg">ChangeMode</button></div>
-     <div className={`main h-[550px] w-[350px] border-2 border-black/30 bg-blue-300/40 rounded-xl  ${isDarkTheme ? "bg-black" : ""}` }>
+     <div className={`main h-[550px] w-[350px] border-2 border-black/30 bg-blue-300/40 rounded-xl  ${isDarkTheme ? "bg-gray-800" : ""}` }>
 <div className=' h-36 p-2 pb-0 relative '>
     <div className='error absolute top-2 p-2 text-red-500 font-semibold'> {error}</div>
-        <input value={num} onChange={handleChange} onKeyDown={handleKeyDown} type="type" name="" id="" className={`h-full w-full border-2 border-black/30 text-5xl text-right ${isDarkTheme ? "bg-gray-800 text-white" : ""}`}/>
+        <input value={num} onChange={handleChange} onKeyDown={handleKeyDown} type="type" name="" id="" className={`h-full w-full border-2 border-black/30 text-5xl  text-right ${isDarkTheme ? "bg-gray-950 text-white" : ""}`}/>
     <div className={`result text-3xl absolute bottom-0 text-right w-full p-5 pb-1 font-semibold ${isDarkTheme ? " text-white" : ""}`}>= {result}</div>
     </div>
     <div className=' h-[400px] p-2 flex flex-col justify-between text-3xl'>
