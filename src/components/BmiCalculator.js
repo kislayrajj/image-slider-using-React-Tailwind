@@ -56,8 +56,10 @@ useEffect(() => {
         setRemaks(" You are Underweight, risk of being malnourished. 🥲");
       } else if (18.6 <= result && result <= 24.9) {
         setRemaks(" You are within a healthy range. 💚");
-      } else {
+      } else if(result >= 25) {
         setRemaks(" You are Overweight. 🏃‍♂️🏃");
+      }else{
+        setRemaks("Enter Valid Inputs")
       }
     } else {
       setRemaks("");
@@ -69,10 +71,11 @@ useEffect(() => {
 
   return (
     <div className='h-screen w-full  flex justify-center  '>
- <div className={` mt-12  border-2 border-blue-400 h-3/4 rounded-xl bg-blue-50 relative  w-[390px] md:w-auto  ${isRain ? "bmi_calculator-rain" : ""}`}>
+ <div className={` mt-12  border-2 border-blue-400 h-3/4 rounded-xl bg-blue-50 relative  w-[360px] md:w-auto  ${isRain ? "bmi_calculator-rain" : ""}`}>
     <div className={`h-1/4 p-2 flex justify-center items-center text-xl  bg-blue-500 rounded-t-lg ${isRain ? "bg-blue-500/20 text-white" : "text-black"}`}>Body-Mass-Index(BMI) Calculator
     </div>
     <div className="absolute top-2 right-2" onClick={handleRain}>{isRain ? <i class="fa-solid fa-cloud-sun"></i> :<i className="fa-solid fa-cloud-sun-rain fa-fade"></i>}</div>
+    <div><a href="https://github.com/kislayrajj/BmiCalculatorUsingReact" target='_blank'><i className="fa-brands fa-github text-lg hover:scale-110 ease-in-out duration-200 absolute top-2 left-2"></i></a></div>
 
 
  <div className="inputs w-full flex justify-center gap-2 pt-10 text-center">
@@ -98,7 +101,7 @@ useEffect(() => {
         </div> */}
          <div className='mt-5'>Remark 👇</div>
         <div className="remark text-xs mt-2">{remark}</div>
-        
+
     </div>
  </div>
     </div>
