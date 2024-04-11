@@ -69,7 +69,7 @@ useEffect(() => {
 
   return (
     <div className='h-screen w-full  flex justify-center  '>
- <div className={` mt-12  border-2 border-blue-400 h-3/4 rounded-xl bg-blue-50 relative  w-[360px] md:w-auto  ${isRain ? "bmi_calculator-rain" : ""}`}>
+ <div className={` mt-12  border-2 border-blue-400 h-3/4 rounded-xl bg-blue-50 relative  w-[390px] md:w-auto  ${isRain ? "bmi_calculator-rain" : ""}`}>
     <div className={`h-1/4 p-2 flex justify-center items-center text-xl  bg-blue-500 rounded-t-lg ${isRain ? "bg-blue-500/20 text-white" : "text-black"}`}>Body-Mass-Index(BMI) Calculator
     </div>
     <div className="absolute top-2 right-2" onClick={handleRain}>{isRain ? <i class="fa-solid fa-cloud-sun"></i> :<i className="fa-solid fa-cloud-sun-rain fa-fade"></i>}</div>
