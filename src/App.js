@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Calculator from './components/Calculator'
+import BmiCalculator from './components/BmiCalculator';
 
 function App() {
   return (
     <div className="App ">
 
-    <Calculator />
+    <BmiCalculator/>
 
     </div>
   );
