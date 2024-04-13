@@ -6,7 +6,7 @@ const BmiCalculator = () => {
     const [weight, setWeight]=useState("");
     const [result, setResult]=useState("0")
     const [remark, setRemaks]=useState("");
-    const [isRain, setIsRain]=useState(false);
+    const [isRain, setIsRain]=useState(true);
 
 
 
