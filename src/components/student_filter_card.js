@@ -68,7 +68,7 @@ const generateMoreUsers =()=>{
         age: Math.floor(Math.random() *(35-18))+18,
         sem: Math.floor(Math.random() * 6 )+1,
         college :  colleges[Math.floor(Math.random()* colleges.length)],
-        email : `${names[Math.floor(Math.random()*names.length)].toLowerCase()}${Math.random().toString(36).substring(2,5)}@gamil.com`,
+        email : `${names[Math.floor(Math.random()*names.length)].toLowerCase()}${Math.random().toString(36).substring(2,5)}@gmail.com`,
 
     };
 
@@ -77,5 +77,5 @@ const generateMoreUsers =()=>{
 while(users.length < 50){
     users.push(generateMoreUsers());
 }
-console.log(users)
+// console.log(users)
 export default users;

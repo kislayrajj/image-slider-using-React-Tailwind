@@ -59,9 +59,9 @@ const [isDark, setIsDark] = useState(false);
   return (
     <div className="center  h-screen">
       <div className=" mt-12  h-[350px] md:h-[400px] w-[350px] md:w-[450px] text-sm md:text-base font-semibold flex  rounded-lg shadow-[1px_5px_46px_41px_#90cdf4] ">
-        <div className={`filters border-r-2 border-red-500 w-[100px] md:min-w-[120px] p-2    rounded-l-lg text-xs md:text-base ${isDark ? "bg-slate-700" : "bg-blue-400"}`}>
+        <div className={`filters border-r-2 border-red-500 w-[100px] md:min-w-[120px] p-2    rounded-l-lg text-xs md:text-base ${isDark ? "bg-slate-700" : "bg-blue-400"} relative`}>
           {/* search box */}
-          <div className="h-fit font-normal">
+          <div className="h-fit font-normal absolute top-2">
             <input
               type="search"
               name=""
@@ -80,13 +80,13 @@ const [isDark, setIsDark] = useState(false);
                 onClick={() => handleFilter(searchUser.id)}
                 className="bg-green-500 text-white p-2 rounded-md text-center ">
                 {searchInput} found!
-                <div>ID : {searchUser.id}</div>
+                <div className="">ID : {searchUser.id}</div>
               </div>
             )}
 
             {/* profile buttons */}
           </div>
-          <div className="mt-1  flex h-[90%] p-2  flex-col gap-3 overflow-y-auto ">
+          <div className="mt-7  flex h-[90%] p-2  flex-col gap-3 overflow-y-auto ">
             {users.map((item) => {
               return (
                 <div
