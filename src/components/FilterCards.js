@@ -57,7 +57,7 @@ const [isDark, setIsDark] = useState(false);
 
 
   return (
-    <div className="center  h-screen">
+    <div className={`center  h-screen ${isDark ? "bg-black" : ""}`}>
       <div className= {`mt-12  h-[350px] md:h-[400px] w-[350px] md:w-[450px] text-sm md:text-base font-semibold flex  rounded-lg ${isDark ? "shadow-[1px_5px_46px_41px_#2D3748]" : " shadow-[1px_5px_46px_41px_#90cdf4]"} `}>
         <div className={`filters border-r-2 border-red-500 w-[100px] md:min-w-[120px] p-2    rounded-l-lg text-xs md:text-base ${isDark ? "bg-slate-700" : "bg-blue-400"} relative`}>
           {/* search box */}
