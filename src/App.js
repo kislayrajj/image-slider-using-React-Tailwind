@@ -1,11 +1,11 @@
 import './App.css';
-import BmiCalculator from './components/BmiCalculator';
+import FilterCards from './components/FilterCards';
 
 function App() {
   return (
     <div className="App ">
 
-    <BmiCalculator/>
+    <FilterCards/>
 
     </div>
   );
