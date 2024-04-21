@@ -27,9 +27,9 @@ const [isDark, setIsDark] = useState(false);
   const searchUser = users.find(
     (item) =>
       item.name === searchInput ||
-      item.name === searchInput[0]?.toUpperCase() + searchInput.slice(1) ||
-      item.name ===
-        searchInput[0]?.toUpperCase() + searchInput.slice(1).toLowerCase()
+      item.name === searchInput[0]?.toUpperCase() + searchInput.slice(1).toLowerCase() 
+      // ||
+      // item.name ===   searchInput[0]?.toUpperCase() + searchInput.slice(1).toLowerCase()
   );
 
   // opens profile of found user on pressing Enter key
