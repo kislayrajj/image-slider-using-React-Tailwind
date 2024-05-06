@@ -1,12 +1,10 @@
-import './App.css';
-import FilterCards from './components/FilterCards';
+import "./App.css";
+import ImageSlider from "./Apps/ImageSlider";
 
 function App() {
   return (
     <div className="App ">
-
-    <FilterCards/>
-
+      <ImageSlider />
     </div>
   );
 }
