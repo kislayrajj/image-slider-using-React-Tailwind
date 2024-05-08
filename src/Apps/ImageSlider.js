@@ -9,6 +9,7 @@ import img7 from "../assests/paddy-o-sullivan-5cE4ecIqMTQ-unsplash.jpg"
 import img8 from "../assests/robert-bye-EKLr56NaJDw-unsplash.jpg"
 import img9 from "../assests/victor-rodriguez-5rchckwczuc-unsplash.jpg"
 import img10 from "../assests/yifei-chen-qqu0_9Gn8tM-unsplash.jpg"
+import {motion } from "framer-motion"
 
 const imageArray = [
   {
@@ -82,7 +83,7 @@ const imageArray = [
 
 const ImageSlider = () => {
   const [currentSlide, setcurrentSlide] = useState(1);
-  const [activeDot, setActiveDot] = useState("");
+  // const [activeDot, setActiveDot] = useState("");
 
   const currentImage = imageArray.filter((image) => image.id === currentSlide);
 
@@ -106,10 +107,19 @@ const ImageSlider = () => {
     setcurrentSlide(id);
   };
 
-//   const handleActiveDot=(dotID)=>{
-// setActiveDot(dotID)
-//   }
-
+//sliding motion
+const slideVariants = {
+  in: (direction) => ({
+    opacity: 1,
+    x: direction > 0 ? "-100%" : "100%",
+    transition: { duration: 0.5 },
+  }),
+  out: (direction) => ({
+    opacity: 0,
+    x: 0,
+    transition: { duration: 0.5 },
+  }),
+};
   return (
     <div>
       <div className="h-screen center items-center gap-2 lg:gap-5 bg-green-100">
@@ -126,16 +136,26 @@ const ImageSlider = () => {
                 key={image.id}
                 className="rounded-md  h-52 w-80 lg:h-96 lg:w-[700px]">
                 <div className="rounded-md bg-black w-full h-full overflow-hidden relative">
-                  <img src={image.image} className="  h-full w-full" />
+                  <motion.img
+                  
+                initial={{  x: 700 }}
+                animate={{  x: 0 }}
+                exit={{  x: -500 }}
+                transition={{ duration: 0.5,type:"keyframe" }}
+                  src={image.image} className="  h-full w-full" />
 
-                  <div className="quotes absolute left-[10%] top-[30%] center lg:w-[550px]  h-14 lg:h-20 text-xs lg:text-base text-green-600 lg:font-semibold rounded-xl px-2 center items-center  backdrop-blur-[1px]">
+                  <motion.div
+                          initial={{  opacity: 0 }}
+                          animate={{  opacity: 1 }}
+                          transition={{ duration: 0.5,delay:.5 }}
+                  className="quotes absolute left-[10%] top-[30%] center lg:w-[550px]  h-14 lg:h-20 text-xs lg:text-base text-green-600 lg:font-semibold rounded-xl px-2 center items-center  backdrop-blur-[1px]">
                     <div className="relative h-full w-full">
                       {image.quote}
                       <div className="author absolute bottom-1 right-1">
                         - {image.author}
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
 
                   <div className="nav_dots flex gap-2 absolute bottom-2 right-[30%] lg:right-[35%] ">
                     {imageArray.map((dot) => {
@@ -144,7 +164,7 @@ const ImageSlider = () => {
                           onClick={() => {
                             handleNavDots(dot.id);
                           }}
-                          className={` cursor-pointer  size-2 lg:size-3 rounded-full hover:bg-green-500 hover:scale-[1.1]  animated ${currentSlide === dot.id ? "bg-green-500 scale-[1.3]" : "bg-gray-200"}`}></span>
+                          className={` cursor-pointer  size-2 lg:size-3 rounded-full  animated ${currentSlide === dot.id ? "bg-green-500 scale-[1.3]" : "bg-gray-200 hover:bg-green-500 hover:scale-[1.1] "}`}></span>
                       );
                     })}
                   </div>
@@ -156,8 +176,6 @@ const ImageSlider = () => {
             );
           })}
         </div>
-
-        <div className="dots"></div>
         <button
           onClick={handleNextSlide}
           className="rounded-full bg-slate-700 text-gray-200 lg:text-xl p-2 center items-center size-6 lg:size-8  hover:bg-black hover:text-white animated ">
