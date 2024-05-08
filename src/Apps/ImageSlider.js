@@ -83,13 +83,14 @@ const imageArray = [
 
 const ImageSlider = () => {
   const [currentSlide, setcurrentSlide] = useState(1);
-  // const [activeDot, setActiveDot] = useState("");
+  const [slideDirection, setSlideDirection] = useState("next");
 
   const currentImage = imageArray.filter((image) => image.id === currentSlide);
 
   const handleNextSlide = () => {
     if (currentSlide <= imageArray.length - 1) {
       setcurrentSlide(currentSlide + 1);
+      setSlideDirection("next");
     } else {
       setcurrentSlide(1);
     }
@@ -97,6 +98,7 @@ const ImageSlider = () => {
   const handlePrevSlide = () => {
     if (1 < currentSlide) {
       setcurrentSlide(currentSlide - 1);
+      setSlideDirection("prev");
     } else {
       setcurrentSlide(imageArray.length);
     }
@@ -107,19 +109,7 @@ const ImageSlider = () => {
     setcurrentSlide(id);
   };
 
-//sliding motion
-const slideVariants = {
-  in: (direction) => ({
-    opacity: 1,
-    x: direction > 0 ? "-100%" : "100%",
-    transition: { duration: 0.5 },
-  }),
-  out: (direction) => ({
-    opacity: 0,
-    x: 0,
-    transition: { duration: 0.5 },
-  }),
-};
+
   return (
     <div>
       <div className="h-screen center items-center gap-2 lg:gap-5 bg-green-100">
@@ -137,17 +127,16 @@ const slideVariants = {
                 className="rounded-md  h-52 w-80 lg:h-96 lg:w-[700px]">
                 <div className="rounded-md bg-black w-full h-full overflow-hidden relative">
                   <motion.img
-                  
-                initial={{  x: 700 }}
-                animate={{  x: 0 }}
-                exit={{  x: -500 }}
-                transition={{ duration: 0.5,type:"keyframe" }}
+                 initial={{ x: slideDirection ==="next" ? 700 : -700 }} // Initial position based on current slide
+                 animate={{ x: 0 }}
+                 exit={{ x: slideDirection ==="next" ? -700 : 700 }} // Exit position based on current slide
+                 transition={{ duration: 0.5, type: "keyframes" }}
                   src={image.image} className="  h-full w-full" />
 
                   <motion.div
                           initial={{  opacity: 0 }}
                           animate={{  opacity: 1 }}
-                          transition={{ duration: 0.5,delay:.5 }}
+                          transition={{ duration: 0.5,delay:1 }}
                   className="quotes absolute left-[10%] top-[30%] center lg:w-[550px]  h-14 lg:h-20 text-xs lg:text-base text-green-600 lg:font-semibold rounded-xl px-2 center items-center  backdrop-blur-[1px]">
                     <div className="relative h-full w-full">
                       {image.quote}
